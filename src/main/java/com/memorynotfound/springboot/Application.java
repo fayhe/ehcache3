@@ -37,6 +37,15 @@ public class Application implements CommandLineRunner {
         play("trombone");
         play("bass");
         play("trombone");
+        play("guitar");
+        play("bass");
+        play("bass4");
+        play("bass4");
+        play("bass4");
+        play("bass5");
+        play("bass5");
+        play("bass5");
+        play("bass4");
     }
 
     private void play(String instrument){

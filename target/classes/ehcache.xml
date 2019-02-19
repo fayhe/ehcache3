@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>
 <config
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xmlns:jsr107='http://www.ehcache.org/v3/jsr107'
@@ -11,9 +11,30 @@
     <jsr107:defaults enable-management="false" enable-statistics="true"/>
   </service>
 
-  <cache alias="instruments">
-     <resources>
-      <heap unit="entries">2000</heap>
-    </resources>
+  <cache alias="instruments" uses-template="heap-cache">
+        <expiry>
+            <ttl unit="minutes">600</ttl>
+        </expiry>
   </cache>
+
+      <cache-template name="heap-cache">
+        <resources>
+            <offheap unit="MB">50</offheap>
+            <heap unit="entries">1</heap>
+           
+        </resources>
+    </cache-template>
+</config>   -->
+
+
+<config
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://www.ehcache.org/v3'
+    xsi:schemaLocation="
+        http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+  <cache alias="instruments">
+    <heap unit="entries">1</heap>
+  </cache>
+
 </config>

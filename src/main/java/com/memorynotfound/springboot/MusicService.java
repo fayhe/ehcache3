@@ -1,3 +1,5 @@
+
+
 package com.memorynotfound.springboot;
 
 import org.slf4j.Logger;
@@ -14,9 +16,9 @@ public class MusicService {
     @CacheEvict(allEntries = true)
     public void clearCache(){}
 
-    @Cacheable(condition = "#instrument.equals('trombone')")
+    @Cacheable(key = "#instrument")
     public String play(String instrument) {
-        log.info("Executing: " + this.getClass().getSimpleName() + ".play(\"" + instrument + "\");");
+        log.info("Executing cash: " + this.getClass().getSimpleName() + ".play(\"" + instrument + "\");");
         return "paying " + instrument + "!";
     }
 
