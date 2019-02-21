@@ -19,6 +19,7 @@ import javax.management.ObjectInstance;
 import java.util.Set;
 import javax.cache.management.CacheStatisticsMXBean;
 import javax.management.MBeanServerInvocationHandler;
+import javax.annotation.Resource;
 
 @EnableCaching
 @SpringBootApplication
@@ -29,7 +30,7 @@ public class Application implements CommandLineRunner {
     @Autowired
     private MusicService musicService;
 
-    @Autowired
+    @Resource
     private CacheManager cacheManager;
 
     public static void main(String[] args) throws Exception {
@@ -61,22 +62,7 @@ public class Application implements CommandLineRunner {
 
         final MBeanServer beanServer = ManagementFactory.getPlatformMBeanServer();
 
-final Set<ObjectInstance> cacheBeans = beanServer.queryMBeans(
-    ObjectName.getInstance("javax.cache:type=CacheStatistics,CacheManager=*,Cache=*"), null);
 
-for ( ObjectInstance cacheBean : cacheBeans ) {
-    final CacheStatisticsMXBean cacheStatisticsMXBean = MBeanServerInvocationHandler.newProxyInstance(beanServer, cacheBean.getObjectName(), CacheStatisticsMXBean.class, false);
-
-   System.out.println("Gets: " + cacheStatisticsMXBean.getCacheGets());
-    System.out.println("Hits: " + cacheStatisticsMXBean.getCacheHits());
-    System.out.println("Misses: " + cacheStatisticsMXBean.getCacheMisses());
-    System.out.println("Removals: " + cacheStatisticsMXBean.getCacheRemovals());
-    System.out.println("Evictions: " + cacheStatisticsMXBean.getCacheEvictions());
-    System.out.println("Avg Get Time: " + cacheStatisticsMXBean.getAverageGetTime());
-    System.out.println("Avg Put Time: " + cacheStatisticsMXBean.getAveragePutTime());
-    System.out.println("Avg Remove Time: " + cacheStatisticsMXBean.getAverageRemoveTime());
-     
-    }
 }
 
     private void play(String instrument){

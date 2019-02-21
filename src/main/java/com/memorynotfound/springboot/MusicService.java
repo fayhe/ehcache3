@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
 
-@Service
+import org.springframework.stereotype.Component;
+
+@Component
 @CacheConfig(cacheNames = "instruments")
 public class MusicService {
 
