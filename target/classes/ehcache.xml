@@ -17,6 +17,13 @@
         </expiry>
   </cache>
 
+    <cache alias="ocr" uses-template="heap-cache">
+        <expiry>
+            <ttl unit="minutes">600</ttl>
+        </expiry>
+    </cache>
+
+
       <cache-template name="heap-cache">
         <resources>
             <offheap unit="MB">50</offheap>
