@@ -39,4 +39,25 @@
 </project>
 
 
+https://stackoverflow.com/questions/50519570/spring-boot-2-testing-cacheable-with-mockito-for-method-without-arguments-is
+
+https://gist.github.com/bijukunjummen/3315275
+
+https://reliablesoftwareblog.wordpress.com/2016/04/19/testing-a-cacheable-method-with-mockito/
+
+https://www.cnblogs.com/wangtj-19/p/5822369.html
+
+https://hotdog.iteye.com/blog/916364
+
+https://www.jianshu.com/p/adee7d28cb59
+
+https://stackoverflow.com/questions/24221569/how-to-test-springs-declarative-caching-support-on-spring-data-repositories
+
+
+
+
+
+
+
+
 https://www.concretepage.com/spring-4/spring-4-guava-cache-integration-example-with-guavacachemanager-and-guavacache
