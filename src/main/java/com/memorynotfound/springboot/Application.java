@@ -2,6 +2,7 @@ package com.memorynotfound.springboot;
 
 import com.google.common.hash.Hashing;
 import com.google.common.hash.HashingInputStream;
+import org.ehcache.config.builders.CacheManagerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -26,6 +27,7 @@ import java.util.Set;
 import javax.cache.management.CacheStatisticsMXBean;
 import javax.management.MBeanServerInvocationHandler;
 import javax.annotation.Resource;
+//import org.ehcache.config.builders.CacheManagerBuilder;
 
 @EnableCaching
 @SpringBootApplication
@@ -59,6 +61,7 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         log.info("Spring Boot Ehcache 2 Caching Example Configuration");
         log.info("using cache manager:!!!!!!!!!!!!!!!!!!!!!!!! " + cacheManager.getClass().getName());
         Object nc = cacheManager.getCache("instruments").getNativeCache();
