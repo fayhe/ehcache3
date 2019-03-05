@@ -38,5 +38,11 @@
 
 </project>
 
+cache: https://www.programcreek.com/java-api-examples/index.php?api=net.sf.ehcache.Statistics
+
+cache: https://www.programcreek.com/java-api-examples/?code=ibissource/iaf/iaf-master/core/src/main/java/nl/nn/adapterframework/cache/IbisCacheManager.java
+
+desc why can not: https://groups.google.com/forum/#!topic/ehcache-users/DTUBPfd3kz8
+
 
 https://www.concretepage.com/spring-4/spring-4-guava-cache-integration-example-with-guavacachemanager-and-guavacache
